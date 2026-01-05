@@ -154,110 +154,93 @@
             border: 1px solid #f5c6cb;
         }
         
-        /* Resume Styles */
-        #resume {
+        /* PDF Viewer Styles */
+        #resume-viewer {
             display: none;
             background-color: white;
-            padding: 3rem;
+            padding: 2rem;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            text-align: left;
-            max-width: 1000px;
+            max-width: 1200px;
             width: 100%;
             margin: 2rem auto;
         }
         
-        .resume-header {
+        .viewer-header {
             text-align: center;
             margin-bottom: 2rem;
         }
         
-        .resume-header h2 {
-            font-size: 2.5rem;
+        .viewer-header h2 {
+            font-size: 2rem;
             color: #2c3e50;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
         }
         
-        .resume-header p {
-            font-size: 1.2rem;
-            color: #7f8c8d;
-        }
-        
-        .section-title {
-            font-size: 1.5rem;
-            color: #2c3e50;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 0.5rem;
-            margin: 2rem 0 1rem 0;
-        }
-        
-        .job {
+        .viewer-actions {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
             margin-bottom: 2rem;
         }
         
-        .job-title {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 0.2rem;
+        #pdf-container {
+            width: 100%;
+            height: 800px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            overflow: auto;
+            background-color: #525659;
         }
         
-        .job-company {
-            font-weight: bold;
-            color: #3498db;
-        }
-        
-        .job-period {
-            color: #7f8c8d;
-            font-style: italic;
-            margin-bottom: 0.5rem;
-        }
-        
-        .job-description ul {
-            padding-left: 1.5rem;
-        }
-        
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-        
-        .skill {
-            background-color: #eaf2f8;
-            color: #3498db;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
+        #pdf-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
         
         .back-btn {
             display: inline-block;
-            margin-top: 2rem;
             padding: 0.5rem 1rem;
             background-color: #2c3e50;
             color: white;
             text-decoration: none;
             border-radius: 4px;
             transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
         }
         
         .back-btn:hover {
             background-color: #1a252f;
         }
         
+        .download-btn {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        .download-btn:hover {
+            background-color: #2980b9;
+        }
+        
         @media (max-width: 768px) {
-            #resume {
-                padding: 1.5rem;
+            h1 {
+                font-size: 2.5rem;
             }
             
-            .resume-header h2 {
-                font-size: 2rem;
+            .tag-line {
+                font-size: 1.2rem;
             }
             
-            .section-title {
-                font-size: 1.3rem;
+            #pdf-container {
+                height: 600px;
             }
         }
     </style>
@@ -267,9 +250,10 @@
         <div class="banner">
             <h1>COMING SOON</h1>
             <p class="tag-line">My professional website is under construction. In the meantime, check out my resume!</p>
-            <div class="countdown" id="countdown">Launching Soon</div>
+            <div class="countdown" id="countdown">"Sales is all about people and people will never go out of business" - Michael Scott</div>
             <div class="actions">
-                <button class="btn" onclick="showResume()">View My Resume</button>
+                <button class="btn" onclick="viewResume()">View My Resume</button>
+                <a href="resume.pdf" class="btn" download>Download Resume</a>
             </div>
             <div class="social-links">
                 <a href="https://www.linkedin.com/in/elton-alphonso" target="_blank">LinkedIn</a>
@@ -287,108 +271,17 @@
         </div>
     </div>
     
-    <div id="resume">
-        <div class="resume-header">
-            <h2>Elton Alphonso</h2>
-            <p>9833626839 | eltonalphonso@gmail.com</p>
-            <p><em>A dynamic sales rep with proven results: Driving revenue growth and building lasting client relationships</em></p>
-        </div>
-        
-        <div class="section">
-            <h3 class="section-title">Experience</h3>
-            
-            <div class="job">
-                <div class="job-title"><span class="job-company">Newfold Digital</span> — Senior Sales Specialist</div>
-                <div class="job-period">February 2024-Present</div>
-                <div class="job-description">
-                    <ul>
-                        <li>Consistently exceeded sales quotas, generating over $140K in annual revenue through effective account management and new client acquisition.</li>
-                        <li>Led a squad of 6 to consistently hit renewal targets and optimize conversion rates (43%) by prioritizing timely follow-ups, maintaining high-quality customer interactions, and ensuring process adherence.</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="job">
-                <div class="job-title"><span class="job-company">Loop Health</span> — Sales Development Representative</div>
-                <div class="job-period">September 2023-Jan 2024</div>
-                <div class="job-description">
-                    <ul>
-                        <li>Proactive identification and outreach to decision-makers through cold calling to schedule product demos. | 18 qualified demos per month.</li>
-                        <li>Compiling corporate insurance info to establish an opportunity pipeline.</li>
-                        <li>Assisted in the lead nurturing process, providing timely information and addressing client concerns.</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="job">
-                <div class="job-title"><span class="job-company">Newfold Digital</span> — Sales Specialist</div>
-                <div class="job-period">Nov 2020 - September 2023</div>
-                <div class="job-description">
-                    <ul>
-                        <li>Acquire new SMB/SME customers through outbound sales.</li>
-                        <li>Exceeded annual sales targets by surpassing a revenue quota of $90k</li>
-                        <li>Developed and executed a targeted upsell campaign, managing a team of 15 to achieve $40K in incremental revenue from existing accounts.</li>
-                        <li>Oversaw the training and development of 3 associates, ensuring their readiness to independently execute process requirements.</li>
-                        <li>Generated 6 qualified leads/month for managed SEO services.</li>
-                        <li>Retention and Escalation POC (25% Retention rate)</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="job">
-                <div class="job-title"><span class="job-company">AllWave AV</span> — Product Specialist (OMBEA)</div>
-                <div class="job-period">July 2020 - September 2020</div>
-                <div class="job-description">
-                    <ul>
-                        <li>Managed the entire sales cycle, from identifying and qualifying leads to delivering compelling product demonstrations.</li>
-                        <li>Detailed linkedin prospecting to identify target audience</li>
-                        <li>Held 2 webinars for interested prospects (30 participants each)</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="job">
-                <div class="job-title"><span class="job-company">Tinder</span> — Campus Marketing Rep (Internship)</div>
-                <div class="job-period">August 2019 - June 2020</div>
-                <div class="job-description">
-                    <ul>
-                        <li>Led digital, social, and guerrilla marketing campaigns to elevate Tinder's brand awareness on campus and online.</li>
-                    </ul>
-                </div>
+    <div id="resume-viewer">
+        <div class="viewer-header">
+            <h2>My Resume</h2>
+            <div class="viewer-actions">
+                <button class="back-btn" onclick="hideResume()">← Back to Home</button>
+                <a href="resume.pdf" class="download-btn" download>Download PDF</a>
             </div>
         </div>
-        
-        <div class="section">
-            <h3 class="section-title">Education</h3>
-            <p><strong>Xavier Institute of Engineering</strong> — B.E Electronics and Telecommunication (2020)</p>
-            <p><strong>St Andrews Junior College</strong> — 12th Std Higher Secondary Certificate Examination (2015)</p>
+        <div id="pdf-container">
+            <iframe id="pdf-iframe" src=""></iframe>
         </div>
-        
-        <div class="section">
-            <h3 class="section-title">Certifications</h3>
-            <ul>
-                <li>Successful Negotiation - Essential Strategies & Skills (06/20): Coursera & UM</li>
-                <li>Digital Marketing: Internshala (08/2019)</li>
-            </ul>
-        </div>
-        
-        <div class="section">
-            <h3 class="section-title">Skills</h3>
-            <div class="skills-list">
-                <span class="skill">Account & Relationship Management</span>
-                <span class="skill">Conflict Resolution</span>
-                <span class="skill">Customer Retention & Growth Strategies</span>
-                <span class="skill">Lead Generation & Prospecting</span>
-                <span class="skill">Solution Selling</span>
-                <span class="skill">Cloud & IT Sales Exposure</span>
-                <span class="skill">Upselling & Cross-selling</span>
-                <span class="skill">Excellent Presentation & Communication</span>
-                <span class="skill">CRM Tools (Salesforce, Jira)</span>
-                <span class="skill">Onboarding & Training</span>
-            </div>
-        </div>
-        
-        <a href="#" class="back-btn" onclick="hideResume()">Back to Home</a>
     </div>
 
     <script>
@@ -426,41 +319,20 @@
             });
         });
 
-        // Toggle between landing page and resume
-        function showResume() {
+        // View resume in browser
+        function viewResume() {
             document.getElementById('landing').style.display = 'none';
-            document.getElementById('resume').style.display = 'block';
+            document.getElementById('resume-viewer').style.display = 'block';
+            document.getElementById('pdf-iframe').src = 'resume.pdf';
             window.scrollTo(0, 0);
         }
         
         function hideResume() {
             document.getElementById('landing').style.display = 'block';
-            document.getElementById('resume').style.display = 'none';
+            document.getElementById('resume-viewer').style.display = 'none';
+            document.getElementById('pdf-iframe').src = '';
             window.scrollTo(0, 0);
         }
-        
-        // You can add a countdown timer here if desired
-        // This is just a placeholder that you can customize later
-        /*
-        const countdownDate = new Date("June 30, 2025 00:00:00").getTime();
-        
-        const countdownTimer = setInterval(function() {
-            const now = new Date().getTime();
-            const distance = countdownDate - now;
-            
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            
-            document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-            
-            if (distance < 0) {
-                clearInterval(countdownTimer);
-                document.getElementById("countdown").innerHTML = "We're Live!";
-            }
-        }, 1000);
-        */
     </script>
 </body>
 </html>
