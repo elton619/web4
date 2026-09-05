@@ -176,6 +176,13 @@
             color: #2c3e50;
             margin-bottom: 1rem;
         }
+
+        .viewer-quote {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
         
         .viewer-actions {
             display: flex;
@@ -254,7 +261,6 @@
 You’ve somehow found my corner of the internet. Welcome. 
 
 This website is still a work in progress. Much like everything else.</p>
-            <div class="countdown" id="countdown">"Sales is all about people and people will never go out of business" - Michael Scott</div>
             <div class="actions">
                 <button class="btn" onclick="viewResume()">View My Resume</button>
             </div>
@@ -277,6 +283,7 @@ This website is still a work in progress. Much like everything else.</p>
     <div id="resume-viewer">
         <div class="viewer-header">
             <h2>My Resume</h2>
+            <p class="viewer-quote">"Sales is all about people and people will never go out of business" - Michael Scott</p>
             <div class="viewer-actions">
                 <button class="back-btn" onclick="hideResume()">← Back to Home</button>
                 <a href="resume.pdf" class="download-btn" download>Download PDF</a>
